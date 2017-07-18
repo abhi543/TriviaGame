@@ -103,7 +103,7 @@ $(document).ready(function(){
 	function startTimer(){
 		$('.panel').show();
 
-		var timeRemain = 7;
+		var timeRemain = 15;
 
 		function run(){
 			intervalId = setInterval(decrement, 1000);
@@ -178,9 +178,6 @@ $(document).ready(function(){
 
 		//then check the answer user picked
 		//if the answer is right
-		
-
-
 		if (userPick === allQuestions[currentQuestion].correctAnswer){
 			console.log(userPick);
 			console.log(allQuestions[currentQuestion].correctAnswer);
@@ -215,11 +212,11 @@ $(document).ready(function(){
 		//show the correct answer in the displayAnswer div
 		$('#displayAnswer').html('<h2>You are correct</h2>');
 
-		//show the result for 5 second then move on to the next question
+		//show the result for 3 second then move on to the next question
 		currentQuestion++;
 		setTimeout (function(){
 			displayQuestion()
-		}, 1000);
+		}, 3000);
 		
 	}
 
@@ -238,11 +235,11 @@ $(document).ready(function(){
 		//show the correct answer in the displayAnswer div
 		$('#displayAnswer').html('<h2>You are wrong</h2><p>Correct answer is: '  + allQuestions[currentQuestion].answers[allQuestions[currentQuestion].correctAnswer] + '</p>');
 
-		//show the result for 5 second then move on to the next question
+		//show the result for 3 second then move on to the next question
 		currentQuestion++;
 		setTimeout (function(){
 			displayQuestion()
-		}, 1000);
+		}, 3000);
 		
 	}
 
@@ -261,10 +258,10 @@ $(document).ready(function(){
 		//show the correct answer in the displayAnswer div
 		$('#displayAnswer').html('<h2>Time is up!</h2><p>Correct answer is: '  + allQuestions[currentQuestion].answers[allQuestions[currentQuestion].correctAnswer] + '</p>');
 
-		//show the result for 5 second then move on to the next question
+		//show the result for 3 second then move on to the next question
 		setTimeout (function(){
 			displayQuestion()
-		}, 1000);
+		}, 3000);
 		currentQuestion++;
 
 	}
@@ -292,9 +289,7 @@ $(document).ready(function(){
 	// ONCLICK ACTION
 	// ==============
 
-	//start the game
-	
-	//start();
+	//start the games
 
 	$('#startButton').on('click', function(){
 
