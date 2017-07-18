@@ -19,21 +19,21 @@ $(document).ready(function(){
 	//question 2
 	{
 		question: "What is Vietnam's capital?",
-		answers: ['Hannoi', 'Saigon','Nhatrang', 'DaNang'],
+		answers: ['Hannoi', 'Saigon','Nha Trang', 'Da Nang'],
 		correctAnswer: 0,
 	},
 
 	//question 3
 	{
-		question: "Which city in Vietnam has beautiful beaches with islands like Hawaii?",
+		question: "Which city is consider as second Hawaii in Vietnam?",
 		answers: ['Saigon', 'Long An', 'Can Tho', 'Nha Trang'],
 		correctAnswer: 3,
 	},
 
 	//question 4
 	{
-		question: "Which one below is part of tradition lunch/dinner meal in Vietnam?",
-		answers: ['Catfish stew', 'Pho', 'Beef Stew', 'Broken Rice & Pork Chop'],
+		question: "Which one below is not tradition breakfast in Vietnam?",
+		answers: ['Catfish Stew', 'Pho', 'Beef Stew', 'Broken Rice & Pork Chop'],
 		correctAnswer: 0,
 	},
 
@@ -86,7 +86,15 @@ $(document).ready(function(){
 		unanswered = 0;
 		correct = 0;
 		wrong = 0;	
+		currentQuestion = 0;
+
 		
+	}
+
+	function reset(){
+		start();
+		displayQuestion();
+
 	}
 
 
@@ -124,7 +132,8 @@ $(document).ready(function(){
 		//first have to hide the startButton and displayAnswer 
 		$('#startButton').hide();
 		$('#displayAnswer').hide();
-		// $('#resetButton').hide();
+		$('#resetButton').hide();
+		
 
 
 		//if there is no question left then show the result div
@@ -136,7 +145,7 @@ $(document).ready(function(){
 
 			//display the time and start the 'startTimer' function with 20 seconds count down
 			$('#timeRemain').show();
-			// $('.hidethis').show();
+			
 			startTimer();
 
 			//show the question being asked and the multipleChoice
@@ -270,14 +279,13 @@ $(document).ready(function(){
 		$('#displayAnswer').show();
 		$('#resetButton').show();
 
+
 		//temporary hide the timer
 		$('#timeRemain').html("&nbsp;");
 
 		//generate the result pannel
 		$('#displayAnswer').html("<h3>Here's how you did!</h3><p>Correct Answer: " + correct + "</p><p>Wrong Answer: " + wrong + "</p><p>Unanswered: " + unanswered + "</p>");
 		$('#questionAsk').html('Result')
-
-
 	}
 
 	// ==============
@@ -303,25 +311,25 @@ $(document).ready(function(){
 
 	});
 
-
-
-	// $('#resetButton').on('click', function(){
-	// 	console.log('reset button')
-	// 	$('#startButton').show();
-	// 	$('.panel').show();
-	// 	start();
-	// 	displayQuestion();
-		
-	// });
-
-
-
-	
-
-
+	$('#resetButton').on('click', function(){
+		console.log('reset button start')
+		reset();
+	});
 
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
 // We need to keep track of correct, incorrect and unanswered questions
 //2.set timeRemain counting down from 20 second (using setTimeout???)
 //3. Create function to display each question in the DOM 
