@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tammy Trivia Game</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<!-- Added link to the jQuery Library -->
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   	<!-- Added a link to Bootstrap-->
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   	<!-- Added a link to local style sheet-->
+  	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class= "container">
+	<div class = "text-center">
+    	<h1>Discover Vietnam</h1>
+    </div>
+
+     <!-- Start button -->
+    <div class="text-center">
+     	<button class="btn btn-default btn-lg" id="startButton">Let's Go</button>
+    </div>
+
+    <!-- time remain -->
+	<div class = "row">
+    	<div class = "col-md-4">
+    		<div class="panel panel-default ">
+          		<div class="panel-heading text-center">
+            		<h2 class="panel-title">TIME REMAINDING</h2>
+          		</div>
+        	<div class="panel-body">
+            	<div class="text-center">
+              		<h1 id= "timeRemain"></h1>
+            	</div>
+        	</div>
+      		</div>
+      	</div>
+
+
+		<!-- questions -->
+      	<div class = "col-md-8">
+    		<div class="panel panel-default ">
+          		<div class="panel-heading text-center">
+            		<h2 class="panel-title" id="questionAsk"></h2>
+          		</div>
+        	     
+              <div class="panel-body" id="multipleChoice">
+               
+              	<div class="row text-center">
+              		<div class="col-md-6">
+              			<button class="btn btn-default btn-lg option" id="zero" value="0"></button>
+              		</div>
+              		<div class="col-md-6">
+              			<button class="btn btn-default btn-lg option" id="one" value="1"></button>
+              		</div>
+              	</div>
+              	<div class="row text-center">
+              		<div class="col-md-6">
+              			<button class="btn btn-default btn-lg option" id="two" value="2"></button>
+              		</div>
+              		<div class="col-md-6">
+              			<button class="btn btn-default btn-lg option" id="three" value="3"></button>
+              		</div>
+              	</div>
+           	</div>
+
+            <div class="panel-body text-center" id="displayAnswer">display anser here</div>
+            <!-- <div class="text-center">
+                <button class="btn btn-default btn-lg" id="resetButton">Let's Play Again</button>
+            </div> -->
+      		</div>
+      	</div>
+	</div>
+</div>
+<script src='assets/javascript/app.js'></script>
+</body>
+</html>
