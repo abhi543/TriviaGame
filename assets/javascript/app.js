@@ -267,7 +267,7 @@ $(document).ready(function(){
 		unanswered++;
 		//show the correct answer in the displayAnswer div
 		$('#displayAnswer').html('<h2>Time is up!</h2><p>Correct answer is: '  + allQuestions[currentQuestion].answers[allQuestions[currentQuestion].correctAnswer] + '</p>');
-
+		$('#imageHolder').html('<img class="gif" src =' + allQuestions[currentQuestion].pic + '>');
 		//show the result for 3 second then move on to the next question
 		setTimeout (function(){
 			displayQuestion()
