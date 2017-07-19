@@ -26,19 +26,30 @@ h1{
 
 }
 
-h3{
-	color: white;
-	text-transform: uppercase;
-	font-weight: bolder;
-}
 
 h2{
 	color: white;
 	text-transform: uppercase;
 	font-weight: bolder;
-	padding: 10px 0px;
+	padding: 80px 0px 0px;
 
 }
+
+h3{
+	color: white;
+	text-transform: uppercase;
+	font-weight: bolder;
+	padding: 10px 0px;
+}
+
+h4{
+	color: white;
+	text-transform: uppercase;
+	font-weight: bolder;
+	padding: 80px 0px 0px;
+font-size:20px;
+}
+
 
 h1#timeRemain{
 	font-size: 100px;
@@ -60,14 +71,21 @@ h1#timeRemain{
 .panel-default{
     background: transparent;
 }
-.panel-default .panel-body{
-    background: transparent;
-}
 
 .panel-body{
-	height: 250px;
+    background: transparent;
+    height: 250px;
 }
 
+.gif {
+	max-height: 200px;
+	/*max-width: 200px;*/
+	padding: auto;
+}
+
+#imageHolder {
+	margin-top: 10px;
+}
 
 .btn-default{
 	background: rgba(225,225,225,0.5); 
@@ -109,7 +127,7 @@ button.option:hover {
 
 
 button#resetButton  {
-	margin-top:-120px;
+	margin-top: 20px;
 	padding:10px 20px;
 	border-color: darkorange;
 	border-width: 2px;
@@ -136,12 +154,12 @@ button#resetButton:hover {
 	margin: 15px auto;
 	}
 
-	h1#timeRemain{
-	font-size: 50px;
+	#displayAnswer{
+		margin-top: -70px;
 	}
 
-	button#resetButton  {
-	margin-top: -10px;
+	.gif {
+		max-width: 90%;
 	}
 
 	h1 {
@@ -179,9 +197,11 @@ button#resetButton:hover {
 	font-size: 100px;
 	}
 
-	button#resetButton  {
-	margin-top:-120px;
+	#displayAnswer{
+		margin-top: -40px;
 	}
+
+	
 
 	
 }

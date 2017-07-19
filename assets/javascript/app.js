@@ -14,6 +14,7 @@ $(document).ready(function(){
 		question: "How to say 'Hello' in Vietnamese?",
 		answers: ['tam biet', 'khoe khong','cam on', 'xin chao'],
 		correctAnswer: 3,
+		pic: 'assets/images/xinchao.gif',
 	},
 
 	//question 2
@@ -21,41 +22,47 @@ $(document).ready(function(){
 		question: "What is Vietnam's capital?",
 		answers: ['Hannoi', 'Saigon','Nha Trang', 'Da Nang'],
 		correctAnswer: 0,
+		pic: 'assets/images/hannoi.jpg',
 	},
 
 	//question 3
 	{
-		question: "Which city is consider as second Hawaii in Vietnam?",
+		question: "Which city is considered as Hawaii in Vietnam?",
 		answers: ['Saigon', 'Long An', 'Can Tho', 'Nha Trang'],
 		correctAnswer: 3,
+		pic: 'assets/images/nhatrang.jpg',
 	},
 
 	//question 4
 	{
-		question: "Which one below is not tradition breakfast in Vietnam?",
+		question: "Which one below is not breakfast in Vietnam?",
 		answers: ['Catfish Stew', 'Pho', 'Beef Stew', 'Broken Rice & Pork Chop'],
 		correctAnswer: 0,
+		pic: 'assets/images/cakho.gif',
 	},
 
 	//question 5
 	{
-		question: "Which is the most transporation method in Vietnam?",
+		question: "Which is the most popular transporation method in Vietnam?",
 		answers: ['Public Bus', 'Train', 'Motopets', 'Cars'],
 		correctAnswer: 2,
+		pic: 'assets/images/xemay.jpg',
 	},
 
 	//question 6
 	{
-		question: "What is Vietnam's tradition garment?",
+		question: "What is Vietnam's traditional garment?",
 		answers: ['Cheongsam', 'Kimono', 'Salong', 'AoDai'],
 		correctAnswer: 3,
+		pic: 'assets/images/aodai.jpg',
 	},
 
 	//question 7
 	{
-		question: "Which beverage is most popular  in Vietnam?",
+		question: "Which beverage is most popular in Vietnam?",
 		answers: ['Cononut Juice', 'Green Tea', 'Coffee', 'Sugarcane Juice'],
 		correctAnswer: 2,
+		pic: 'assets/images/caphe.gif',
 	},
 
 
@@ -72,6 +79,7 @@ $(document).ready(function(){
 	var userPick;
 
 	$('.panel').hide();
+	$('#resetButton').hide();
 	
 
 
@@ -82,15 +90,14 @@ $(document).ready(function(){
 	//function to start the game
 	function start(){
 		console.log('restart the game');
-
 		unanswered = 0;
 		correct = 0;
 		wrong = 0;	
 		currentQuestion = 0;
-
-		
 	}
 
+
+	//function to reset the game
 	function reset(){
 		start();
 		displayQuestion();
@@ -129,10 +136,10 @@ $(document).ready(function(){
 	function displayQuestion() {
 		console.log('displayQuestion start')
 		
-		//first have to hide the startButton and displayAnswer 
+		//first have to hide the startButton, resetButton, imageHolder and displayAnswer 
 		$('#startButton').hide();
-		$('#displayAnswer').hide();
 		$('#resetButton').hide();
+		$('.afterSection').hide();
 		
 
 
@@ -145,12 +152,12 @@ $(document).ready(function(){
 
 			//display the time and start the 'startTimer' function with 20 seconds count down
 			$('#timeRemain').show();
-			
 			startTimer();
 
 			//show the question being asked and the multipleChoice
 			$('#questionAsk').show();
 			$('#multipleChoice').show();
+			
 
 			//generate the question
 			$('#questionAsk').html(allQuestions[currentQuestion].question);
@@ -168,6 +175,7 @@ $(document).ready(function(){
 	function checkAnswer() {
 		console.log('checkAnswer function start')
 		//hide the multiple choice
+		$('.afterSection').show();
 		$('#questionAsk').show();
 		$('#multipleChoice').hide();
 		
@@ -203,14 +211,16 @@ $(document).ready(function(){
 		console.log('rightChoice functions start')
 		//show the displayAnswer pannel
 		$('#questionAsk').show();
-		$('#displayAnswer').show();
+		$('.afterSection').show();
 		//hide the multiple choice pannel
 		$('#multipleChoice').hide();
 
 		//increase the correctAnswer
 		correct++;
 		//show the correct answer in the displayAnswer div
-		$('#displayAnswer').html('<h2>You are correct</h2>');
+		
+		$('#imageHolder').html('<img class="gif" src =' + allQuestions[currentQuestion].pic + '>');
+		$('#displayAnswer').html("<h2>You're correct!</h2><p>Well done!!!</p>");
 
 		//show the result for 3 second then move on to the next question
 		currentQuestion++;
@@ -226,15 +236,15 @@ $(document).ready(function(){
 		
 		//show the displayAnswer pannel
 		$('#questionAsk').show();
-		$('#displayAnswer').show();
+		$('.afterSection').show();
 		//hide the multiple choice pannel
 		$('#multipleChoice').hide();
 
 		//increase the wrong answer
 		wrong++;
 		//show the correct answer in the displayAnswer div
-		$('#displayAnswer').html('<h2>You are wrong</h2><p>Correct answer is: '  + allQuestions[currentQuestion].answers[allQuestions[currentQuestion].correctAnswer] + '</p>');
-
+		$('#displayAnswer').html("<h2>You're wrong!</h2><p>Correct answer is: "  + allQuestions[currentQuestion].answers[allQuestions[currentQuestion].correctAnswer] + "</p>");
+		$('#imageHolder').html('<img class="gif" src =' + allQuestions[currentQuestion].pic + '>');
 		//show the result for 3 second then move on to the next question
 		currentQuestion++;
 		setTimeout (function(){
@@ -249,7 +259,7 @@ $(document).ready(function(){
 		console.log('timeUp function start')
 		
 		//show the displayAnswer pannel
-		$('#displayAnswer').show();
+		$('.afterSection').show();
 		//hide the multiple choice pannel
 		$('#multipleChoice').hide();
 
@@ -270,18 +280,19 @@ $(document).ready(function(){
 	function result(){
 		console.log('result function start')
 		//hide the multiple choice pannel
-		$('#questionAsk').html('&nbsp;')
+		
 		$('#multipleChoice').hide();
 		//show the result in the displayAnswer pannel 
-		$('#displayAnswer').show();
+		$('.afterSection').show();
 		$('#resetButton').show();
 
 
 		//temporary hide the timer
 		$('#timeRemain').html("&nbsp;");
+		$('#imageHolder').html('<img class="gif" src ="assets/images/goodjob.gif" />');
 
 		//generate the result pannel
-		$('#displayAnswer').html("<h3>Here's how you did!</h3><p>Correct Answer: " + correct + "</p><p>Wrong Answer: " + wrong + "</p><p>Unanswered: " + unanswered + "</p>");
+		$('#displayAnswer').html("<h4>Here's how you did!</h4><p>Correct Answer: " + correct + "</p><p>Wrong Answer: " + wrong + "</p><p>Unanswered: " + unanswered + "</p>");
 		$('#questionAsk').html('Result')
 	}
 
