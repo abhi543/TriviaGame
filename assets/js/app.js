@@ -27,7 +27,7 @@ $(document).ready(function () {
             question: "Which city is considered as Hawaii in Vietnam?",
             answers: ['Saigon', 'Long An', 'Can Tho', 'Nha Trang'],
             correctAnswer: 3,
-            pic: 'assets/images/nhaTrang.jpg',
+            pic: 'assets/images/nhatrang.jpg',
         },
 
         //question 4
