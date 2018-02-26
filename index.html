@@ -1,86 +1,169 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Tammy Trivia Game</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<!-- Added link to the jQuery Library -->
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   	<!-- Added a link to Bootstrap-->
-  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-   	<!-- Added a link to local style sheet-->
-  	<link rel="stylesheet" href="assets/css/style.css">
+    <title>Discover Vietnam</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Bootstrap cdn -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+
+
+
+    <!-- link to local style sheet-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Font Awesome Glyphicons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
 </head>
+
 <body>
-
-<div class= "container">
-	<div class = "text-center">
-    	<h1>Discover Vietnam</h1>
-    </div>
-
-     <!-- Start button -->
-    <div class="text-center">
-     	<button class="btn btn-default btn-lg" id="startButton">Let's Go</button>
-    </div>
-
-    <!-- time remain -->
-	<div class = "row">
-    	<div class = "col-md-4">
-    		<div class="panel panel-default ">
-          		<div class="panel-heading text-center">
-            		<h3 class="panel-title">TIME REMAINDING</h3>
-          		</div>
-        	<div class="panel-body">
-            	<div class="text-center">
-              		<h1 id= "timeRemain"></h1>
-            	</div>
-        	</div>
-      		</div>
-      	</div>
-
-
-		<!-- questions -->
-      	<div class = "col-md-8">
-    		<div class="panel panel-default ">
-          		<div class="panel-heading text-center">
-            		<h3 class="panel-title" id="questionAsk"></h3>
-          		</div>
-        	     
-              <div class="panel-body" id="multipleChoice">
-               
-              	<div class="row text-center">
-              		<div class="col-md-6">
-              			<button class="btn btn-default btn-lg option" id="zero" value="0"></button>
-              		</div>
-              		<div class="col-md-6">
-              			<button class="btn btn-default btn-lg option" id="one" value="1"></button>
-              		</div>
-              	</div>
-              	<div class="row text-center">
-              		<div class="col-md-6">
-              			<button class="btn btn-default btn-lg option" id="two" value="2"></button>
-              		</div>
-              		<div class="col-md-6">
-              			<button class="btn btn-default btn-lg option" id="three" value="3"></button>
-              		</div>
-              	</div>
-           	</div>
-            <div class="panel-body afterSection">
-              <div class ="row">
-                <div class="col-md-6 text-center" id="imageHolder">display image here</div>
-                <div class="col-md-6 text-center" id="displayAnswer">display answer here</div>
-              </div>
+    <div class="containter-fluid">
+        <div class="row">
+            <div id="box">
+                <h4 id="disc">Dis<br>co- <br>ver</h4>
+                <h1 id="vn">Viet<br class="visible-xs hidden-sm">nam</h1>
+                <h4 id="start">S<br>T<br>A<br>R<br>T<br><i class="fas fa-play fa-rotate-90 fa-sm"></i></h4>
             </div>
-          </div>
-      	</div>
-	</div>
+        </div>
+    </div>
 
-  <!-- restart button -->
-  <div class="text-center">
-    <button class="btn btn-default btn-lg" id="resetButton">Play Again</button>
-  </div>
-</div>
 
-<!-- link to script -->
-<script src='assets/javascript/app.js'></script>
+    <!-- questions display -->
+
+    <div class="container">
+        <div id="questionDisplay">
+
+            <!-- first row -->
+            <div class="row" style="margin-bottom: 40px">
+
+                <div class="col-sm-4 col-xs-12">
+                    <h4 id="questionAsk"></h4>
+                </div>
+                <div class="col-sm-1 hidden-xs"></div>
+                <div class="col-sm-2 col-xs-6 text-center">
+                    <div style="padding: 6px 10px; border: 1px solid #333" class="multiChoice top" value="0">
+                        <p class="abcd">A</p>
+                        <p id="one"></p>
+                        <div class="hoverEffect">
+                            <p class="sure">SURE?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-1 hidden-xs"></div>
+                <div class="col-sm-2 col-xs-6 text-center">
+                    <div style="padding: 6px 10px; border: 1px solid #333" class="multiChoice top" value="1">
+                        <p class="abcd">B</p>
+                        <p id="two"></p>
+                        <div class="hoverEffect">
+                            <p class="sure">SURE?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2 hidden-xs"></div>
+
+            </div>
+
+            <!-- second row process bar -->
+            <div class="row">
+                <div id="timeSection">
+                    <div class="col-xs-10 col-sm-10">
+                        <div id="progressBar"></div>
+                    </div>
+                    <div class="col-sm-1 hidden-xs"></div>
+                    <div class="col-xs-2 col-sm-1 text-center">
+                        <h4 id="currentQuestion"></h4>
+                        <hr style="border-top: 2px solid #FF8C22; width:20px">
+                        <h4>10</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- third row -->
+            <div class="row" style="margin-top: 50px">
+                <div class="col-sm-4 col-xs-12 text-center">
+                    <h1 class="countDown"></h1>
+                </div>
+                <div class="col-sm-1 hidden-xs"></div>
+                <div class="col-sm-2 col-xs-6 text-center">
+                    <div style="padding: 6px 10px; border: 1px solid #333" class="multiChoice bottom" value="2">
+                        <p class="abcd">C</p>
+                        <p id="three"></p>
+                        <div class="hoverEffect">
+                            <p class="sure">SURE?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-1 hidden-xs"></div>
+                <div class="col-sm-2 col-xs-6 text-center">
+                    <div style="padding: 6px 10px; border: 1px solid #333" class="multiChoice bottom" value="3">
+                        <p class="abcd">D</p>
+                        <p id="four"></p>
+                        <div class="hoverEffect">
+                            <p class="sure">SURE?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2 hidden-xs">
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- answers display -->
+        <div id="answerDisplay">
+            <div class="row">
+
+                <div class="col-md-2" id="rightOrWrong">
+                    <!-- <h3 class="checkAns">YOU ARE<br><span style="color: #FF8C22; font-weight:bold; letter-spacing: 5px;" class="boldTxt"></span></h3> -->
+                </div>
+
+                <div class="col-md-3" id="correctAns">
+                    <!-- <p id="correctAns">The correct<br class="visible-md hidden-xs"> answer is<br class="hidden-xs"/></p> -->
+                </div>
+                <div class="col-md-5 text-center" id="image-holder">
+                    <!-- <img src="" alt="" class="img-responsive" > -->
+                </div>
+                
+                <!-- <div class="col-sm-1 hidden-xs"></div> -->
+
+                <div class="col-md-2 text-center questionNum">
+                    <h4 id="currentQuestion"></h4>
+                    <hr style="border-top: 2px solid #FF8C22; width:20px">
+                    <h4>10</h4>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- result display -->
+        <div class="containter-fluid">
+            <div class="row">
+                <div id="resultBox">
+                    <!-- <h4 class="result">correct answer:7</h4>
+                    <h4 class="result">Wrong answer: </h4>
+                    <h4 class="result">No answer:3</h4> -->
+                    <!-- <h1 id="resultTxt">Re<br class="visible-xs visible-sm hidden-md">sults</h1> -->
+                    <h4 id="start">A<br>G<br>A<br>I<br>N<br><i class="fas fa-play fa-rotate-90 fa-sm"></i></h4>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="assets/js/app.js"></script>
 </body>
+
 </html>
