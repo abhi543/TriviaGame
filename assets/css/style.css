@@ -20,10 +20,13 @@ body {
     -webkit-background-size: cover;
 	-moz-background-size: cover;
     -o-background-size: cover;
-    -webkit-transition-timing-function: 1.5s linear;
+    -webkit-transition: 1.5s;
+    -moz-transition-size: 1.5s linear;
+    -o-transition-size: 1.5s linear;
     transition: 1s linear;
     
 }
+
 
 .vnTxt {
     width: 1320px;

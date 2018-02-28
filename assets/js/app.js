@@ -161,7 +161,7 @@ $(document).ready(function () {
 			clearInterval(intervalId);
     	}
     run();
-    createProgressbar('progressBar', '11s');
+  
     }
 
 
@@ -190,20 +190,20 @@ $(document).ready(function () {
         progressbarinner.style.animationPlayState = 'running';
       }
       
-      addEventListener('load', function() {
-        
+        addEventListener('load', function() {
+            createProgressbar('progressBar', '11s');
     });
+
 
 
      
     //function to display the questions
 	function displayQuestion() {
         console.log('display the 4 questions');
-
         $('#box').hide();
         $('#answerDisplay').hide();
         $('body').css('background-image', 'url("assets/images/answerBg.jpg")');
-        $("body").css({"background-position":"center center"})
+        $("body").css({"background-position":"center center"});
         $('#questionDisplay').animate({height: 'toggle', opacity: '1'}, 1000);
 		
 
