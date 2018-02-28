@@ -161,6 +161,7 @@ $(document).ready(function () {
 			clearInterval(intervalId);
     	}
     run();
+    createProgressbar('progressBar', '11s');
     }
 
 
@@ -190,7 +191,7 @@ $(document).ready(function () {
       }
       
       addEventListener('load', function() {
-        createProgressbar('progressBar', '11s');
+        
     });
 
 
