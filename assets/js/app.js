@@ -1,3 +1,5 @@
+window.location.reload(true);
+
 $(document).ready(function () {
     // ==============================
     // THE QUESTIONS-ANSWERS OBJECTS
