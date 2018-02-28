@@ -364,7 +364,7 @@ $(document).ready(function () {
         $("#endGame").get(0).play();
 		console.log('result function start')
 		//hide the multiple choice pannel
-		
+		$('#progressBar').empty();
         $('#questionDisplay').hide();
         $('#answerDisplay').hide();
 
