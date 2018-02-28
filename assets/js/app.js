@@ -1,11 +1,11 @@
-
 window.onpageshow = function(event) {
     if (event.persisted) {
         window.location.reload() 
     }
 };
 
-(document).ready(function () {
+
+$(document).ready(function () {
    
     // ==============================
     // THE QUESTIONS-ANSWERS OBJECTS
