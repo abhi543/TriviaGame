@@ -99,6 +99,7 @@ $(document).ready(function () {
     $('#questionDisplay').hide();
     $('#answerDisplay').hide();
     $('#resultBox').hide();
+    
 
     // ==============
     // ONCLICK ACTION
@@ -133,12 +134,13 @@ $(document).ready(function () {
         correct = 0;
         wrong = 0;
         currentQuestion = 0;
+        createProgressbar('progressBar', '11s');
 
     }
 
     //function to start the countdown timer
 	function startTimer(){
-        $('.countDown').show();
+        $('.countDown').fadeIn('fast');
         $('.countDown').html('&nbsp;');
 
 		var timeRemain = 11;
@@ -170,10 +172,11 @@ $(document).ready(function () {
         // We select the div that we want to turn into a progressbar
         var progressbar = document.getElementById(id);
         progressbar.className = 'progressbar';
-      
+        
         // We create the div that changes width to show progress
         var progressbarinner = document.createElement('div');
         progressbarinner.className = 'inner';
+        
       
         // Now we set the animation parameters
         progressbarinner.style.animationDuration = duration;
@@ -190,9 +193,9 @@ $(document).ready(function () {
         progressbarinner.style.animationPlayState = 'running';
       }
       
-        addEventListener('load', function() {
-            createProgressbar('progressBar', '11s');
-    });
+    //     addEventListener('load', function() {
+    //         createProgressbar('progressBar', '11s');
+    // });
 
 
 
@@ -200,10 +203,11 @@ $(document).ready(function () {
     //function to display the questions
 	function displayQuestion() {
         console.log('display the 4 questions');
+       
         $('#box').hide();
         $('#answerDisplay').hide();
         $('body').css('background-image', 'url("assets/images/answerBg.jpg")');
-        $("body").css({"background-position":"center center"});
+        // $("body").css({"background-position":"center center"});
         $('#questionDisplay').animate({height: 'toggle', opacity: '1'}, 1000);
 		
 
