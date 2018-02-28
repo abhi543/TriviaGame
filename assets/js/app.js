@@ -1,6 +1,7 @@
-window.location.reload(true);
+
 
 $(document).ready(function () {
+    window.location.reload(true);
     // ==============================
     // THE QUESTIONS-ANSWERS OBJECTS
     // ==============================
