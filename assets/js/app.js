@@ -1,5 +1,3 @@
-
-
 $(document).ready(function () {
     // ==============================
     // THE QUESTIONS-ANSWERS OBJECTS
@@ -10,7 +8,6 @@ $(document).ready(function () {
         // question 1
         {
             question: "How to say 'Hello' in Vietnamese?",
-            alphabet: ['A', 'B', 'C', 'D'],
             answers: ['tam biet', 'khoe khong', 'cam on', 'xin chao'],
             correctAnswer: 3,
             pic: 'assets/images/xinchao.gif',
@@ -112,6 +109,7 @@ $(document).ready(function () {
     $('#start').on('click', function () {
         start();
         displayQuestion();
+        $("#audio").get(0).play();
     });
 
     $('.multiChoice').on('click', function () {
@@ -123,6 +121,10 @@ $(document).ready(function () {
     // =================
     // ALL THE FUNCTIONS
     // =================
+
+    $("#audio").get(0).pause();
+    $("#endGame").get(0).pause();
+
 
     //function to start the game
     function start() {
@@ -353,6 +355,8 @@ $(document).ready(function () {
     
     //function to display the result
 	function result(){
+        $("#audio").get(0).pause();
+        $("#endGame").get(0).play();
 		console.log('result function start')
 		//hide the multiple choice pannel
 		
