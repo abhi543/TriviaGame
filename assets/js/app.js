@@ -281,7 +281,7 @@ $(document).ready(function () {
                               + '<span class="boldTxt">RIGHT</span></h3>');
 
                 // $('span.boldTxt').html("RIGHT").css("letter-spacing", "10px");
-        $("#correctAns").html('<p>The correct <br class = "visible-md hidden-xs">answer is <br class="hidden-xs">'
+        $("#correctAns").html('<p>The correct <br class = "visible-md visible-lg hidden-sm hidden-xs">answer is <br class="hidden-xs">'
                              + '<span style="text-transform: uppercase; color: #FE7900"; font-weight:600>' 
                              + allQuestions[currentQuestion].answers[allQuestions[currentQuestion].correctAnswer] 
                              + '</span></p>');
@@ -308,7 +308,7 @@ $(document).ready(function () {
                               + '<span class="boldTxt"><span style="letter-spacing: 4px">WRONG</span></h3>');
         
         // $('span.boldTxt').html("WRONG");        
-        $("#correctAns").html('<p>The correct <br class = "visible-md hidden-xs">answer is <br class="hidden-xs">'
+        $("#correctAns").html('<p>The correct <br class = "visible-md visible-lg hidden-sm hidden-xs">answer is <br class="hidden-xs">'
                             + '<span style="text-transform: uppercase; color: #FE7900"; font-weight:600>' 
                             + allQuestions[currentQuestion].answers[allQuestions[currentQuestion].correctAnswer] 
                             + '</span></p>');
@@ -337,7 +337,7 @@ $(document).ready(function () {
 
         // $('.checkAns').html("<span class='boldTxt'>TIME'S UP</span>")
 		$('#image-holder').html('<img class="img-responsive" src =' + allQuestions[currentQuestion].pic + '>');        
-        $("#correctAns").html('<p>The correct <br class = "visible-md hidden-xs">answer is <br class="hidden-xs">'
+        $("#correctAns").html('<p>The correct <br class = "visible-md visible-lg hidden-sm hidden-xs">answer is <br class="hidden-xs">'
                             + '<span style="text-transform: uppercase; color: #FE7900"; font-weight:600>' 
                             + allQuestions[currentQuestion].answers[allQuestions[currentQuestion].correctAnswer] 
                             + '</span></p>');
